@@ -1,0 +1,30 @@
+{
+  "name": "simple-ssi",
+  "version": "0.0.1",
+  "description": "Simple server side includes connect middleware",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/academo/simple-ssi.git"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "keywords": [
+    "ssi",
+    "connect",
+    "middlewar",
+    "includes",
+    "side"
+  ],
+  "author": "Esteban Beltran <sergies@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tamper": "~0.1.0"
+  },
+  "devDependencies": {
+    "chai": "~1.9.0",
+    "connect": "~2.12.0",
+    "supertest": "~0.9.0"
+  }
+}
