@@ -30,3 +30,16 @@ describe('relative server side includes', function () {
         .end(done);
     });
 });
+
+describe('server side variables', function () {
+    it('HTTP_HOST', function(done){
+        request(app)
+        .get('/')
+        .expect(function(res){
+             if(res.text.indexOf('http://127.0.0.1:') == -1){
+                return 'Host variable not present';
+            }
+        })
+        .end(done);
+    });
+});
