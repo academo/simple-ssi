@@ -8,7 +8,9 @@ var connect = require('connect'),
 
 //server settings
 var app = connect()
-    .use(ssi('test/files'))
+    .use(ssi('test/files', {
+        'HTTP_HOST' : 'testingdomain.com'
+    }))
     .use(connect.logger('dev'))
     .use(connect.static('test/files'));
 
@@ -36,7 +38,7 @@ describe('server side variables', function () {
         request(app)
         .get('/')
         .expect(function(res){
-             if(res.text.indexOf('http://127.0.0.1:') == -1){
+             if(res.text.indexOf('testingdomain.com') == -1){
                 return 'Host variable not present';
             }
         })
