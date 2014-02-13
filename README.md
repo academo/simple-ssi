@@ -16,6 +16,14 @@ Include de module in your server file
 var ssi = require('simple-ssi');
 ```
 
+If you need server variables support you must define them
+```
+var ssi = require('simple-ssi', {
+    'HTTP_HOST': 'mydomain.com',
+    'DATE_LOCAL': '11:11'
+});
+```
+
 add it as a connect middleware before static, you need to pass the absolute path to static files
 
 ```
@@ -32,3 +40,8 @@ Current working server side inlcudes
 <!--#include file="" -->
 ```
 Used to include a file with a relative path.
+**Server varaibles**
+```
+<!--#echo var="VAR" -->
+```
+To include a variable name into the file, variables names are defined when SSI is initialized. Setting variables is not supported.
